@@ -12,7 +12,7 @@ const posts = (await getPosts()).slice(0, 3);
     <div class="hero-main">
       <p class="hello"><Localized zh="你好，我是 Chris Wang" en="Hi, I'm Chris Wang" /></p>
       <h1 class="localized-lines"><Localized zh={'在网络与书页之间，\n连接值得探索的世界。'} en={'Between networks and books,\na world to explore.'} /></h1>
-      <p class="hero-role localized-lines"><Localized zh={'Cisco 咨询工程技术负责人，\n专注于数据中心与企业网络。'} en={'Consulting Engineering Technical Leader at Cisco,\nfocused on data center and enterprise networking.'} /></p>
+      <p class="hero-role localized-lines" lang="en">{'Consulting Engineering Technical Leader at Cisco,\nfocused on data center and enterprise networking.'}</p>
       <p class="hero-personal"><Localized zh="工作之外，喜欢读书、徒步，也动手做一些让阅读更有意思的小项目。" en="Outside of work, I enjoy reading, hiking, and building projects that make reading more rewarding." /></p>
       <div class="hero-links"><a class="button" href="#projects"><Localized zh="看看我的项目" en="Explore projects" /> <span aria-hidden="true">↓</span></a><a class="quiet-link" href="/about/"><Localized zh="更多关于我" en="More about me" /></a></div>
     </div>

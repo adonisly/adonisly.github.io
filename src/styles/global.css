@@ -177,7 +177,7 @@ h1 { font-family: var(--serif); font-weight: 600; letter-spacing: -.045em; font-
   .bilingual-header nav a { padding-block: 4px 8px; }
   .bilingual-header .language-toggle { min-height: 34px; }
   html[lang='en'] .hero h1 { font-size: clamp(27px, 5.7vw, 38px); }
-  html[lang='en'] .hero-role { white-space: normal; }
+  .hero-role.localized-lines { white-space: normal; }
   html[lang='en'] .project-title-row h3 .project-subtitle { font-size: 12px; margin-left: 9px; }
   .hero-note .localized-lines { white-space: normal; }
   .hero { grid-template-columns: 1fr; gap: 30px; padding-block: 48px 45px; }
