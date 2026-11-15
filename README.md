@@ -28,7 +28,7 @@ npm run preview -- --port 4322
 
 - Settings → Pages 的发布方式为 GitHub Actions，自定义域名为 `inklinks.io`。
 - Cloudflare 的 `@` 与 `www` 均为 CNAME，指向 `adonisly.github.io`，采用 DNS only。根域名使用 Cloudflare CNAME flattening。
-- `www.inklinks.io` 由 GitHub Pages 自动跳转到 `inklinks.io`，证书由 GitHub 管理。证书签发后启用 Enforce HTTPS。
+- `www.inklinks.io` 由 GitHub Pages 自动跳转到 `inklinks.io`，证书由 GitHub 管理，已启用 Enforce HTTPS。
 - GitHub Actions 发布不依赖 `CNAME` 文件；自定义域名在仓库 Pages 设置中管理。
 - ReadMap、Bookclub、图片域名和原有验证记录独立保留。
 - 域名所有权在 GitHub 个人 Settings → Pages 验证；验证成功后，应持续保留 Cloudflare 中对应的 TXT 记录。
