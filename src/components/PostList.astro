@@ -1,13 +1,15 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import { formatDate } from '../data/posts';
-interface Props { posts: CollectionEntry<'blog'>[]; }
-const { posts } = Astro.props;
+import Localized from './Localized.astro';
+interface Props { posts: CollectionEntry<'blog'>[]; bilingual?: boolean; }
+const { posts, bilingual = false } = Astro.props;
+const englishTags: Record<string, string> = { '阅读': 'Reading', '建站笔记': 'Site notes', '技术': 'Technology', '徒步': 'Hiking' };
 ---
 <div class="post-list">
   {posts.map(post => <article class="post-row" data-post data-tags={JSON.stringify(post.data.tags)}>
-    <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
-    <div><a class="post-title" href={`/blog/${post.id}/`}>{post.data.title}</a><p>{post.data.description}</p><div class="post-tags">{post.data.tags.map(tag => <a href={`/tags/${encodeURIComponent(tag)}/`}>{tag}</a>)}</div></div>
-    <a class="read-post" href={`/blog/${post.id}/`} aria-label={`阅读：${post.data.title}`}><span aria-hidden="true">↗</span></a>
+    <time datetime={post.data.date.toISOString()}>{bilingual ? <Localized zh={formatDate(post.data.date)} en={new Intl.DateTimeFormat('en', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'Asia/Shanghai' }).format(post.data.date)} /> : formatDate(post.data.date)}</time>
+    <div><a class="post-title" href={`/blog/${post.id}/`}>{bilingual ? <Localized zh={post.data.title} en={post.data.titleEn ?? post.data.title} /> : post.data.title}</a><p>{bilingual ? <Localized zh={post.data.description} en={post.data.descriptionEn ?? post.data.description} /> : post.data.description}</p><div class="post-tags">{post.data.tags.map(tag => <a href={`/tags/${encodeURIComponent(tag)}/`}>{bilingual ? <Localized zh={tag} en={englishTags[tag] ?? tag} /> : tag}</a>)}</div></div>
+    <a class="read-post" href={`/blog/${post.id}/`} aria-label={`阅读：${post.data.title}`} data-label-zh={bilingual ? `阅读：${post.data.title}` : undefined} data-label-en={bilingual ? `Read: ${post.data.titleEn ?? post.data.title}` : undefined}><span aria-hidden="true">↗</span></a>
   </article>)}
 </div>

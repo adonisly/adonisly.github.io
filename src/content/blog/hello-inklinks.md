@@ -1,6 +1,8 @@
 ---
 title: 从这里开始，连接阅读与探索
 description: 给项目与文字安一个家，也给好奇心留一个入口。
+titleEn: A home for reading and exploration
+descriptionEn: A place for projects, notes, and following curiosity.
 date: 2026-11-15
 tags: [阅读, 建站笔记]
 lang: zh-CN

@@ -1,0 +1,5 @@
+---
+interface Props { zh: string; en: string; }
+const { zh, en } = Astro.props;
+---
+<span data-i18n="zh-CN">{zh}</span><span data-i18n="en">{en}</span>
