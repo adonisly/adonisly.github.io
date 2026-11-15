@@ -31,11 +31,6 @@ const nav = [['/', '首页', 'Home'], ['/projects/', '项目', 'Projects'], ['/b
     <meta property="og:site_name" content="Inklinks" />
     <meta property="og:image" content={new URL('/social-card.png', Astro.site)} />
     <meta name="twitter:card" content="summary_large_image" />
-    {bilingual && <script is:inline>
-      try {
-        if (localStorage.getItem('inklinks-language') === 'en') document.documentElement.lang = 'en';
-      } catch { /* Keep Chinese when browser storage is unavailable. */ }
-    </script>}
   </head>
   <body>
     <a class="skip-link" href="#main">{bilingual ? <Localized zh="跳到正文" en="Skip to content" /> : '跳到正文'}</a>
@@ -71,7 +66,6 @@ const nav = [['/', '首页', 'Home'], ['/projects/', '项目', 'Projects'], ['/b
         toggle.addEventListener('click', () => {
           const language = document.documentElement.lang === 'en' ? 'zh-CN' : 'en';
           document.documentElement.lang = language;
-          try { localStorage.setItem('inklinks-language', language); } catch { /* Switching still works without storage. */ }
           syncLabels();
         });
       }

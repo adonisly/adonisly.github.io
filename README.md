@@ -17,7 +17,7 @@ npm run preview -- --port 4322
 ## 内容
 
 - 项目：`src/data/projects.ts`。
-- 首页导航提供中英文切换，并在浏览器本地记住选择；子页面与文章保留各自原文。主页文章摘要可通过 `titleEn`、`descriptionEn` 提供英文。
+- 首页每次打开或刷新默认显示中文，可手动切换英文；职位介绍固定为英文，子页面与文章保留各自原文。主页文章摘要可通过 `titleEn`、`descriptionEn` 提供英文。
 - 博客：`src/content/blog/*.md`。填写 `title`、`description`、`date`、`tags`；`draft: true` 可隐藏草稿，草稿不会进入页面、RSS 或 sitemap。
 - 文章日期使用 `YYYY-MM-DD`；新增技术、阅读或徒步文章后，标签会自动出现在筛选栏和标签页。
 - 首篇欢迎文字属于首版编辑草案，等待网站预览确认后一起发布。
