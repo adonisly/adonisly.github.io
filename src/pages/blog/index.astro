@@ -1,0 +1,29 @@
+---
+import Base from '../../layouts/Base.astro';
+import PostList from '../../components/PostList.astro';
+import { getPosts } from '../../data/posts';
+const posts = await getPosts();
+const tags = [...new Set(posts.flatMap(post => post.data.tags))].sort();
+---
+<Base title="文字 · Inklinks" description="Chris Wang 的技术文章、读书笔记和徒步见闻。">
+  <div class="wrap page-content"><header class="page-heading"><p class="hello">Notes & stories</p><h1>写下来，慢慢想。</h1><p>技术里的问题，阅读中的发现，路上的片刻。</p></header>
+    <div class="blog-toolbar"><div class="filter-list" role="group" aria-label="按主题筛选"><button type="button" class="filter-button" data-filter="all" aria-pressed="true">全部</button>{tags.map(tag => <button type="button" class="filter-button" data-filter={tag} aria-pressed="false">{tag}</button>)}</div><div><a href="/blog/archive/">归档</a><a href="/rss.xml">RSS ↗</a></div></div>
+    <p class="sr-only" id="filter-status" aria-live="polite"></p>
+    <PostList posts={posts} />
+  </div>
+  <script>
+    const filters = document.querySelectorAll<HTMLButtonElement>('[data-filter]');
+    filters.forEach(button => button.addEventListener('click', () => {
+      const selected = button.dataset.filter;
+      filters.forEach(filter => filter.setAttribute('aria-pressed', String(filter === button)));
+      let count = 0;
+      document.querySelectorAll<HTMLElement>('[data-post]').forEach(post => {
+        const tags: string[] = JSON.parse(post.dataset.tags || '[]');
+        post.hidden = selected !== 'all' && !tags.includes(selected || '');
+        if (!post.hidden) count++;
+      });
+      const status = document.getElementById('filter-status');
+      if (status) status.textContent = `显示 ${count} 篇文章`;
+    }));
+  </script>
+</Base>

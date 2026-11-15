@@ -1,0 +1,15 @@
+---
+import ProjectArt from './ProjectArt.astro';
+import { projects } from '../data/projects';
+interface Props { project: (typeof projects)[number]; }
+const { project } = Astro.props;
+---
+<article class="project-card">
+  <a class="project-cover" href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`访问${project.title}（新窗口）`}><ProjectArt kind={project.id} /></a>
+  <div class="project-copy">
+    <div class="project-title-row"><h3><a href={project.url} target="_blank" rel="noopener noreferrer">{project.name}<span>{project.title}</span></a></h3><span class="external-symbol" aria-hidden="true">↗</span></div>
+    <p>{project.description}</p>
+    <ul class="project-tags" aria-label="项目特色">{project.tags.map(tag => <li>{tag}</li>)}</ul>
+    <a class="domain-link" href={project.url} target="_blank" rel="noopener noreferrer">{project.domain}<span class="sr-only">（新窗口）</span></a>
+  </div>
+</article>

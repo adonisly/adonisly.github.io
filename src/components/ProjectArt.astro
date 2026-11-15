@@ -1,0 +1,29 @@
+---
+interface Props { kind: string; }
+const { kind } = Astro.props;
+---
+<div class:list={['project-art', kind]} aria-hidden="true">
+  {kind === 'readmap' ? <svg class="map-art" viewBox="0 0 600 300" fill="none">
+    <path d="M-20 240C90 240 110 90 230 115S390 230 620 38M20 55C160 45 175 255 345 200S480 60 620 125" stroke="#c1d7ee" stroke-width="1.5" stroke-dasharray="5 7"/>
+    <path d="m120 205 105-90 140 65 115-92M225 115l-48-65M365 180l55 78" stroke="#6c9dce" stroke-width="2"/>
+    <circle cx="120" cy="205" r="10" fill="#fff" stroke="#3773ad" stroke-width="2"/>
+    <circle cx="225" cy="115" r="15" fill="#fff" stroke="#3773ad" stroke-width="2"/>
+    <circle cx="365" cy="180" r="24" fill="#2364a5"/>
+    <path d="M354 174c4-3 8-3 11 0 4-3 8-3 12 0v15c-4-3-8-3-12 0-3-3-7-3-11 0v-15Zm11 0v15" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+    <circle cx="480" cy="88" r="11" fill="#fff" stroke="#3773ad" stroke-width="2"/>
+    <circle cx="177" cy="50" r="5" fill="#92b5d5"/><circle cx="420" cy="258" r="5" fill="#92b5d5"/>
+    <g fill="#315575" font-family="Georgia,serif" font-size="14"><text x="77" y="240">Philosophy</text><text x="237" y="92">History</text><text x="403" y="180">Literature</text><text x="473" y="60">Music</text></g>
+  </svg> : <svg class="shelf-art" viewBox="0 0 600 300" fill="none">
+    <path d="M70 250h460" stroke="#9eae9b" stroke-width="2"/>
+    <rect x="111" y="82" width="48" height="167" rx="3" fill="#78957a"/><path d="M120 92v148" stroke="#adc2aa"/>
+    <rect x="166" y="60" width="58" height="189" rx="3" fill="#e8dabd"/><path d="M175 70v169" stroke="#c2b599"/>
+    <rect x="231" y="103" width="37" height="146" rx="3" fill="#42605a"/>
+    <g transform="rotate(-11 285 249)"><rect x="285" y="73" width="50" height="176" rx="3" fill="#afc2c0"/><path d="M294 85v151" stroke="#dbe6e1"/></g>
+    <rect x="351" y="213" width="122" height="36" rx="3" fill="#c3ac88"/><rect x="359" y="182" width="108" height="25" rx="3" fill="#eee5d4"/>
+    <path d="M365 195h92M358 231h106" stroke="#9a8f79"/>
+    <g fill="#fff" font-family="Georgia,serif" font-size="13"><text transform="translate(140 111) rotate(90)">Stories</text><text transform="translate(254 132) rotate(90)">Together</text></g>
+    <text transform="translate(200 88) rotate(90)" fill="#6f644f" font-family="Georgia,serif" font-size="16">A shared reading life</text>
+    <circle cx="448" cy="75" r="22" stroke="#b9cdb5"/><circle cx="492" cy="108" r="11" stroke="#b9cdb5"/><path d="m466 88 17 13" stroke="#b9cdb5"/>
+  </svg>}
+  <span class="art-caption">{kind === 'readmap' ? 'Follow your curiosity.' : 'Better, together.'}</span>
+</div>
