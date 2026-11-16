@@ -3,7 +3,16 @@ interface Props { kind: string; }
 const { kind } = Astro.props;
 ---
 <div class:list={['project-art', kind]} aria-hidden="true">
-  {kind === 'western-philosophy' ? <svg viewBox="0 0 600 300" fill="none">
+  {kind === 'homeric-epic' ? <svg viewBox="0 0 600 300" fill="none">
+    <path d="M82 264h436M110 54h380" stroke="#d9bdc5" stroke-width="1.5"/>
+    <path d="M300 104v35M165 139h270M165 139v30M435 139v30" stroke="#a46576" stroke-width="2"/>
+    <rect x="242" y="50" width="116" height="54" rx="8" fill="#995066"/>
+    <rect x="107" y="169" width="116" height="54" rx="8" fill="#fffaf7" stroke="#b67b8b" stroke-width="1.5"/>
+    <rect x="377" y="169" width="116" height="54" rx="8" fill="#fffaf7" stroke="#b67b8b" stroke-width="1.5"/>
+    <text x="300" y="84" text-anchor="middle" fill="#fffaf7" font-family="Georgia,serif" font-size="23">Zeus</text>
+    <g fill="#855367" font-family="Georgia,serif" text-anchor="middle"><text x="165" y="204" font-size="22">Helen</text><text x="435" y="203" font-size="20">Sarpedon</text><text x="300" y="252" font-size="15">Gods, heroes &amp; lineages</text></g>
+    <circle cx="71" cy="112" r="7" stroke="#c8a2ae"/><circle cx="531" cy="124" r="5" fill="#c8a2ae"/>
+  </svg> : kind === 'western-philosophy' ? <svg viewBox="0 0 600 300" fill="none">
     <path d="M45 205c110-165 195 105 340-65s140-32 185-70" stroke="#d8ccbe" stroke-width="1.5" stroke-dasharray="5 7"/>
     <path d="m153 140 125 45 145-70" stroke="#9d886c" stroke-width="2"/>
     <circle cx="153" cy="140" r="27" fill="#fffdf8" stroke="#a99475" stroke-width="2"/>
@@ -34,5 +43,5 @@ const { kind } = Astro.props;
     <text transform="translate(200 88) rotate(90)" fill="#6f644f" font-family="Georgia,serif" font-size="16">A shared reading life</text>
     <circle cx="448" cy="75" r="22" stroke="#b9cdb5"/><circle cx="492" cy="108" r="11" stroke="#b9cdb5"/><path d="m466 88 17 13" stroke="#b9cdb5"/>
   </svg>}
-  <span class="art-caption">{kind === 'western-philosophy' ? 'Follow the thread of ideas.' : kind === 'readmap' ? 'Follow your curiosity.' : 'Better, together.'}</span>
+  <span class="art-caption">{kind === 'homeric-epic' ? 'Follow the paths of gods and heroes.' : kind === 'western-philosophy' ? 'Follow the thread of ideas.' : kind === 'readmap' ? 'Follow your curiosity.' : 'Better, together.'}</span>
 </div>
