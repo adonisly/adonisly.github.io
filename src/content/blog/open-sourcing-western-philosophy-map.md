@@ -11,7 +11,9 @@ draft: false
 
 读哲学史时，我经常遇到一个问题：记住了某位哲学家的观点，却很难说清他与前后思想家的联系。按时代读是一条线，按流派读又是另一条线。我想把这些线索放到同一张可以搜索和探索的地图上。
 
-这就是 ReadMap 里的「西方哲学思想脉络图」。最近，看到 [DeanChensj 开源的中国历史地图](https://github.com/DeanChensj/jiangshan-map)，我也决定把这个功能从主站拆出来，让别人可以直接使用、自己部署，也能参与完善。
+这就是 **[阅读路书 ReadMap](https://readmap.inklinks.io/)** 里的「西方哲学思想脉络图」。ReadMap 是我围绕主题阅读和知识联系搭建的项目：通过阅读路径和交互式知识图谱，把哲学、历史、音乐等领域的书与思想连接起来，帮助读者找到下一步想了解的内容。
+
+最近，看到 [DeanChensj 开源的中国历史地图](https://github.com/DeanChensj/jiangshan-map)，我也决定把这个功能从主站拆出来，让别人可以直接使用、自己部署，也能参与完善。[ReadMap 中的西方哲学图谱](https://readmap.inklinks.io/knowledge-graphs/western-philosophy)也继续保留，方便从哲学探索延伸到更多阅读主题。
 
 现在可以在 **[西方哲学思想脉络图](https://western-philosophy.inklinks.io/)** 体验，源码在 **[GitHub](https://github.com/adonisly/western-philosophy-map)**。下面记录这次拆分中值得留下的经验。
 
@@ -95,3 +97,13 @@ Search Console 中，主站和独立站分别完成了资源验证与 sitemap �
 图谱本身仍是持续整理的学习工具。结构检查通过，不等于每条年代、译名和思想关系都完成了史料审核。如果你发现资料有误，欢迎到 [Issues](https://github.com/adonisly/western-philosophy-map/issues) 附上来源，也欢迎通过 [Pull Request](https://github.com/adonisly/western-philosophy-map/pulls) 改进代码和内容。
 
 希望它能成为读哲学史时可以随手打开的一张地图。带着一个人物或问题进去，沿着联系慢慢读下去。
+
+## 继续在 ReadMap 探索
+
+西方哲学图谱是 [阅读路书 ReadMap](https://readmap.inklinks.io/) 的一个起点。如果你想从思想脉络走向更完整的主题阅读，可以继续看看：
+
+- **[主题阅读路径](https://readmap.inklinks.io/reading-paths)**：从感兴趣的问题出发，寻找可以逐步读下去的书单与阅读路线。
+- **[更多知识图谱](https://readmap.inklinks.io/knowledge-graphs)**：继续探索西方音乐史、佛教史、中国历史朝代等主题，观察人物、时代与思想之间的联系。
+- **[主站西方哲学图谱](https://readmap.inklinks.io/knowledge-graphs/western-philosophy)**：在 ReadMap 中继续探索本文的哲学地图，并使用主站的评论与反馈入口。
+
+欢迎把 [ReadMap](https://readmap.inklinks.io/) 收藏为阅读时的一个入口，也欢迎把你希望看到的阅读主题和使用建议告诉我。
