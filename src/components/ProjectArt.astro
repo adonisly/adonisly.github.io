@@ -3,7 +3,16 @@ interface Props { kind: string; }
 const { kind } = Astro.props;
 ---
 <div class:list={['project-art', kind]} aria-hidden="true">
-  {kind === 'readmap' ? <svg class="map-art" viewBox="0 0 600 300" fill="none">
+  {kind === 'western-philosophy' ? <svg viewBox="0 0 600 300" fill="none">
+    <path d="M45 205c110-165 195 105 340-65s140-32 185-70" stroke="#d8ccbe" stroke-width="1.5" stroke-dasharray="5 7"/>
+    <path d="m153 140 125 45 145-70" stroke="#9d886c" stroke-width="2"/>
+    <circle cx="153" cy="140" r="27" fill="#fffdf8" stroke="#a99475" stroke-width="2"/>
+    <circle cx="278" cy="185" r="34" fill="#867252"/>
+    <circle cx="423" cy="115" r="27" fill="#fffdf8" stroke="#a99475" stroke-width="2"/>
+    <path d="M265 180c5-4 9-4 13 0 5-4 9-4 14 0v18c-5-4-9-4-14 0-4-4-8-4-13 0v-18Zm13 0v18" stroke="#fffdf8" stroke-width="1.7" stroke-linejoin="round"/>
+    <g fill="#79654a" font-family="Georgia,serif" font-size="16"><text x="119" y="99">Socrates</text><text x="258" y="242">Plato</text><text x="390" y="72">Aristotle</text></g>
+    <circle cx="79" cy="228" r="4" fill="#c5b696"/><circle cx="509" cy="184" r="5" fill="#c5b696"/>
+  </svg> : kind === 'readmap' ? <svg class="map-art" viewBox="0 0 600 300" fill="none">
     <path d="M-20 240C90 240 110 90 230 115S390 230 620 38M20 55C160 45 175 255 345 200S480 60 620 125" stroke="#c1d7ee" stroke-width="1.5" stroke-dasharray="5 7"/>
     <path d="m120 205 105-90 140 65 115-92M225 115l-48-65M365 180l55 78" stroke="#6c9dce" stroke-width="2"/>
     <circle cx="120" cy="205" r="10" fill="#fff" stroke="#3773ad" stroke-width="2"/>
@@ -25,5 +34,5 @@ const { kind } = Astro.props;
     <text transform="translate(200 88) rotate(90)" fill="#6f644f" font-family="Georgia,serif" font-size="16">A shared reading life</text>
     <circle cx="448" cy="75" r="22" stroke="#b9cdb5"/><circle cx="492" cy="108" r="11" stroke="#b9cdb5"/><path d="m466 88 17 13" stroke="#b9cdb5"/>
   </svg>}
-  <span class="art-caption">{kind === 'readmap' ? 'Follow your curiosity.' : 'Better, together.'}</span>
+  <span class="art-caption">{kind === 'western-philosophy' ? 'Follow the thread of ideas.' : kind === 'readmap' ? 'Follow your curiosity.' : 'Better, together.'}</span>
 </div>

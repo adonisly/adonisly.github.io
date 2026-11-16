@@ -3,6 +3,6 @@ import Base from '../layouts/Base.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import { projects } from '../data/projects';
 ---
-<Base title="项目 · Inklinks" description="Chris Wang 正在做的两个阅读项目：阅读路书 ReadMap 与书读经典 Bookclub。">
-  <div class="wrap page-content"><header class="page-heading"><p class="hello">Projects</p><h1>让好奇心有个落点。</h1><p>一个帮助梳理知识的脉络，一个连接共同阅读的人。<br />这是我目前在做的两个项目。</p></header><div class="project-grid">{projects.map(project => <ProjectCard project={project} />)}</div><p class="page-footnote">两个项目都可以直接访问；它们也会随着使用与反馈继续生长。</p></div>
+<Base title="项目 · Inklinks" description={`Chris Wang 的阅读与开源项目：${projects.map(project => project.title).join('、')}。`}>
+  <div class="wrap page-content"><header class="page-heading"><p class="hello">Projects</p><h1>让好奇心有个落点。</h1><p>从阅读路径到思想地图，连接知识，也连接共同阅读的人。<br />这里整理了目前在做的 {projects.length} 个阅读与开源项目。</p></header><div class="project-grid">{projects.map(project => <ProjectCard project={project} />)}</div><p class="page-footnote">项目均可在线访问；标有 GitHub 源码入口的项目也欢迎复用与贡献，具体条件以各仓库许可为准。</p></div>
 </Base>

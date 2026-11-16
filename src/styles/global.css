@@ -73,19 +73,24 @@ h1 { font-family: var(--serif); font-weight: 600; letter-spacing: -.045em; font-
 .project-art { position: relative; height: 266px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
 .project-art.readmap { background: #edf3fa; }
 .project-art.bookclub { background: #edf1e9; }
+.project-art.western-philosophy { background: #f3eee5; }
 .project-art svg { width: 100%; height: 100%; transition: transform .3s ease; }
 .project-cover:hover svg { transform: scale(1.025); }
 .art-caption { position: absolute; top: 18px; left: 23px; font-family: Georgia, serif; font-size: 13px; color: #4e7295; }
 .bookclub .art-caption { color: #657660; }
+.western-philosophy .art-caption { color: #79654a; }
 .project-copy { padding: 23px 2px 0; }
 .project-title-row { display: flex; align-items: center; justify-content: space-between; }
 .project-title-row h3 { font-weight: 600; font-size: 25px; letter-spacing: -.6px; }
-.project-title-row h3 .project-subtitle { font-weight: 400; font-size: 15px; margin-left: 13px; letter-spacing: 0; color: var(--muted); }
+.project-title-row h3 > a { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 13px; }
+.project-title-row h3 .project-subtitle { font-weight: 400; font-size: 15px; letter-spacing: 0; color: var(--muted); }
 .external-symbol { font-size: 23px; color: #63839c; padding-right: 8px; }
 .project-copy > p { font-size: 14px; color: var(--muted); margin-top: 11px; max-width: 490px; line-height: 1.95; }
 .project-tags { list-style: none; display: flex; flex-wrap: wrap; gap: 7px; padding: 0; margin: 17px 0 13px; }
 .project-tags li { font-size: 11px; padding: 2px 9px; color: #516672; background: #edf0f0; border-radius: 4px; }
 .domain-link { font-size: 12px; color: #596e7d; }
+.project-links { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; }
+.source-link { color: var(--blue); }
 .domain-link:hover { text-decoration: underline; }
 .writing-section { border-top: 1px solid var(--line); padding-top: 47px; }
 .post-list { width: 100%; }
@@ -178,7 +183,7 @@ h1 { font-family: var(--serif); font-weight: 600; letter-spacing: -.045em; font-
   .bilingual-header .language-toggle { min-height: 34px; }
   html[lang='en'] .hero h1 { font-size: clamp(27px, 5.7vw, 38px); }
   .hero-role.localized-lines { white-space: normal; }
-  html[lang='en'] .project-title-row h3 .project-subtitle { font-size: 12px; margin-left: 9px; }
+  html[lang='en'] .project-title-row h3 .project-subtitle { font-size: 12px; }
   .hero-note .localized-lines { white-space: normal; }
   .hero { grid-template-columns: 1fr; gap: 30px; padding-block: 48px 45px; }
   .hello { font-size: 13px; margin-bottom: 18px; }

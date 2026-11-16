@@ -1,4 +1,19 @@
-export const projects = [
+interface Project {
+  id: string;
+  name: string;
+  title: string;
+  titleEn: string;
+  descriptionEn: string;
+  tagsEn: string[];
+  line: string;
+  description: string;
+  url: string;
+  domain: string;
+  tags: string[];
+  repositoryUrl?: string;
+}
+
+export const projects: Project[] = [
   {
     id: 'readmap',
     name: 'ReadMap',
@@ -11,6 +26,20 @@ export const projects = [
     url: 'https://readmap.inklinks.io/',
     domain: 'readmap.inklinks.io',
     tags: ['阅读路径', '知识图谱', '跨学科探索'],
+  },
+  {
+    id: 'western-philosophy',
+    name: 'Philosophy Map',
+    title: '西方哲学思想脉络图',
+    titleEn: 'Western philosophy',
+    descriptionEn: 'An open-source map from ReadMap. Search philosophers, explore centuries and schools, and follow the connections that shaped Western philosophy. Browse without an account, self-host, or contribute on GitHub.',
+    tagsEn: ['Western philosophy', 'Interactive map', 'Open source'],
+    line: '沿着思想的来路，读懂西方哲学史。',
+    description: '从 ReadMap 独立开源的西方哲学思想脉络图。搜索人物、切换世纪与流派布局，沿着传承关系梳理西方哲学史；无需登录即可浏览，也可自行部署与贡献。',
+    url: 'https://western-philosophy.inklinks.io/',
+    domain: 'western-philosophy.inklinks.io',
+    repositoryUrl: 'https://github.com/adonisly/western-philosophy-map',
+    tags: ['西方哲学史', '交互式图谱', '开源项目'],
   },
   {
     id: 'bookclub',

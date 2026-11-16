@@ -23,7 +23,7 @@ const posts = (await getPosts()).slice(0, 3);
     </aside>
   </section>
   <section class="projects-section wrap" id="projects" aria-labelledby="projects-heading">
-    <div class="section-heading"><div><h2 id="projects-heading"><Localized zh="把兴趣，做成可以分享的东西。" en="Interests, made to be shared." /></h2><p><Localized zh="目前在做的两个阅读项目" en="Two reading projects I'm working on" /></p></div><a class="text-link" href="/projects/"><Localized zh="全部项目" en="All projects" /> <span aria-hidden="true">↗</span></a></div>
+    <div class="section-heading"><div><h2 id="projects-heading"><Localized zh="把兴趣，做成可以分享的东西。" en="Interests, made to be shared." /></h2><p><Localized zh={`目前在做的 ${projects.length} 个阅读与开源项目`} en={`${projects.length} projects for reading and open exploration`} /></p></div><a class="text-link" href="/projects/"><Localized zh="全部项目" en="All projects" /> <span aria-hidden="true">↗</span></a></div>
     <div class="project-grid">{projects.map(project => <ProjectCard project={project} bilingual />)}</div>
   </section>
   <section class="writing-section wrap" aria-labelledby="writing-heading">

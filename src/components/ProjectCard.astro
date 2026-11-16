@@ -11,6 +11,9 @@ const { project, bilingual = false } = Astro.props;
     <div class="project-title-row"><h3><a href={project.url} target="_blank" rel="noopener noreferrer">{project.name}<span class="project-subtitle">{bilingual ? <Localized zh={project.title} en={project.titleEn} /> : project.title}</span></a></h3><span class="external-symbol" aria-hidden="true">↗</span></div>
     <p>{bilingual ? <Localized zh={project.description} en={project.descriptionEn} /> : project.description}</p>
     <ul class="project-tags" aria-label="项目特色" data-label-zh={bilingual ? '项目特色' : undefined} data-label-en={bilingual ? 'Project features' : undefined}>{project.tags.map((tag, index) => <li>{bilingual ? <Localized zh={tag} en={project.tagsEn[index]} /> : tag}</li>)}</ul>
-    <a class="domain-link" href={project.url} target="_blank" rel="noopener noreferrer">{project.domain}<span class="sr-only">{bilingual ? <Localized zh="（新窗口）" en=" (opens in a new tab)" /> : '（新窗口）'}</span></a>
+    <div class="project-links">
+      <a class="domain-link" href={project.url} target="_blank" rel="noopener noreferrer">{project.domain}<span class="sr-only">{bilingual ? <Localized zh="（新窗口）" en=" (opens in a new tab)" /> : '（新窗口）'}</span></a>
+      {project.repositoryUrl && <a class="domain-link source-link" href={project.repositoryUrl} target="_blank" rel="noopener noreferrer">GitHub · {bilingual ? <Localized zh="源码" en="Source" /> : '源码'} ↗<span class="sr-only">{bilingual ? <Localized zh="（新窗口）" en=" (opens in a new tab)" /> : '（新窗口）'}</span></a>}
+    </div>
   </div>
 </article>

@@ -17,6 +17,7 @@ npm run preview -- --port 4322
 ## 内容
 
 - 项目：`src/data/projects.ts`。
+- 新开源项目发布时，同步登记到上述共用列表，填写中英文介绍、在线地址、GitHub 仓库地址（`repositoryUrl`）、标签与对应封面；首页和 `/projects/` 会从同一列表生成，项目数量自动更新。完成检查、构建与桌面／手机页面验证，推送后核验两处正式入口和链接，再将发布结果回填来源项目的开源操作文档。博客发布与项目列表登记分别验收，不互相替代。
 - 首页每次打开或刷新默认显示中文，可手动切换英文；职位介绍固定为英文，子页面与文章保留各自原文。主页文章摘要可通过 `titleEn`、`descriptionEn` 提供英文。
 - 博客：`src/content/blog/*.md`。填写 `title`、`description`、`date`、`tags`；`draft: true` 可隐藏草稿，草稿不会进入页面、RSS 或 sitemap。
 - 文章日期使用 `YYYY-MM-DD`；新增技术、阅读或徒步文章后，标签会自动出现在筛选栏和标签页。
